@@ -13,18 +13,20 @@ namespace ExampleModifierMod {
         }
 
         public override void NotifyDeactivation() {
-            ExampleModifierMod.QiRecoilModifierVotes.Remove(this);
             base.NotifyDeactivation();
+            ExampleModifierMod.QiRecoilModifierVotes.Remove(this);
         }
 
         public override void NotifyPause() {
-            ExampleModifierMod.QiRecoilModifierVotes.Remove(this);
             base.NotifyPause();
+            ExampleModifierMod.QiRecoilModifierVotes.Remove(this);
         }
 
         public override void NotifyResume() {
-            ExampleModifierMod.QiRecoilModifierVotes.Add(this);
             base.NotifyResume();
+            if(enabled) {
+                ExampleModifierMod.QiRecoilModifierVotes.Add(this);
+            }
         }
     }
 }
